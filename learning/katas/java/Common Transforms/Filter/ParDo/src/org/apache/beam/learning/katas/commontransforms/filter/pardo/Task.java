@@ -42,8 +42,9 @@ public class Task {
     pipeline.run();
   }
 
-
-  //Dataflow code here!
+  static PCollection<Integer> applyTransform(PCollection<Integer> input) {
+      //Dataflow code
+  }
  
   
 }
