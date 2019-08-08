@@ -42,18 +42,11 @@ public class Task {
     pipeline.run();
   }
 
-  static PCollection<Integer> applyTransform(PCollection<Integer> input) {
-    return input.apply(ParDo.of(
-        new DoFn<Integer, Integer>() {
 
-          @ProcessElement
-          public void processElement(@Element Integer number, OutputReceiver<Integer> out) {
-            if (number % 2 == 1) {
-              out.output(number);
-            }
-          }
-        })
-    );
-  }
-
+  //Dataflow code here!
+ 
+  
 }
+
+
+
