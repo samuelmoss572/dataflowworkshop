@@ -49,12 +49,6 @@ public class Task {
     pipeline.run();
   }
 
-  static PCollection<KV<String, Iterable<String>>> applyTransform(PCollection<String> input) {
-    return input
-        .apply(MapElements.into(kvs(strings(), strings()))
-            .via(word -> KV.of(word.substring(0, 1), word)))
-
-        .apply(GroupByKey.create());
-  }
+//Write dataflow code here!
 
 }
