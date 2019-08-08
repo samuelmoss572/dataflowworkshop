@@ -50,6 +50,10 @@ public class Task {
     pipeline.run();
   }
 
-  //Code here!
+static PCollection<String> applyTransform(
+          PCollection<String> words1, PCollection<String> words2) {
+  //populate with code
+
+  }
 
 }
