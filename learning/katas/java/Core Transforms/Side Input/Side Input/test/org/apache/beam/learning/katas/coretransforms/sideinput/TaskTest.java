@@ -33,43 +33,6 @@ public class TaskTest {
   @Rule
   public final transient TestPipeline testPipeline = TestPipeline.create();
 
-  @Test
-  public void sideInput() {
-    PCollection<KV<String, String>> citiesToCountries =
-        testPipeline.apply("Cities and Countries",
-            Create.of(
-                KV.of("Beijing", "China"),
-                KV.of("London", "United Kingdom"),
-                KV.of("San Francisco", "United States"),
-                KV.of("Singapore", "Singapore"),
-                KV.of("Sydney", "Australia")
-            ));
-
-    PCollectionView<Map<String, String>> citiesToCountriesView =
-        Task.createView(citiesToCountries);
-
-    PCollection<Person> persons =
-        testPipeline.apply("Persons",
-            Create.of(
-                new Person("Henry", "Singapore"),
-                new Person("Jane", "San Francisco"),
-                new Person("Lee", "Beijing"),
-                new Person("John", "Sydney"),
-                new Person("Alfred", "London")
-            ));
-
-    PCollection<Person> results = Task.applyTransform(persons, citiesToCountriesView);
-
-    PAssert.that(results)
-        .containsInAnyOrder(
-            new Person("Henry", "Singapore", "Singapore"),
-            new Person("Jane", "San Francisco", "United States"),
-            new Person("Lee", "Beijing", "China"),
-            new Person("John", "Sydney", "Australia"),
-            new Person("Alfred", "London", "United Kingdom")
-        );
-
-    testPipeline.run().waitUntilFinish();
-  }
+  //Write test here!
 
 }
