@@ -73,22 +73,6 @@ public class Task {
     return citiesToCountries.apply(View.asMap());
   }
 
-  static PCollection<Person> applyTransform(
-      PCollection<Person> persons, PCollectionView<Map<String, String>> citiesToCountriesView) {
-
-    return persons.apply(ParDo.of(new DoFn<Person, Person>() {
-
-      @ProcessElement
-      public void processElement(@Element Person person, OutputReceiver<Person> out,
-          ProcessContext context) {
-        Map<String, String> citiesToCountries = context.sideInput(citiesToCountriesView);
-        String city = person.getCity();
-        String country = citiesToCountries.get(city);
-
-        out.output(new Person(person.getName(), city, country));
-      }
-
-    }).withSideInputs(citiesToCountriesView));
-  }
+  //dataflow code here!
 
 }
