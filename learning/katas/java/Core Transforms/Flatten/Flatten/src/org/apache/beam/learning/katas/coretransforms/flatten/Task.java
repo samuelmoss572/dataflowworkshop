@@ -50,11 +50,6 @@ public class Task {
     pipeline.run();
   }
 
-  static PCollection<String> applyTransform(
-      PCollection<String> words1, PCollection<String> words2) {
-
-    return PCollectionList.of(words1).and(words2)
-        .apply(Flatten.pCollections());
-  }
+  //Code here!
 
 }
