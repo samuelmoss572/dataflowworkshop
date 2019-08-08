@@ -67,12 +67,6 @@ public class Task {
     pipeline.run();
   }
 
-  static PCollectionView<Map<String, String>> createView(
-      PCollection<KV<String, String>> citiesToCountries) {
-
-    return citiesToCountries.apply(View.asMap());
-  }
-
   //dataflow code here!
 
 }
