@@ -49,6 +49,9 @@ public class Task {
     pipeline.run();
   }
 
-//Write dataflow code here!
+  static PCollection<KV<String, Iterable<String>>> applyTransform(PCollection<String> input) {
+//write code here
+  }
+
 
 }
