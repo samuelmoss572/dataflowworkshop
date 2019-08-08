@@ -27,24 +27,6 @@ import org.junit.Test;
 
 public class TaskTest {
 
-  @Rule
-  public final transient TestPipeline testPipeline = TestPipeline.create();
-
-  @Test
-  public void flatten() {
-    PCollection<String> wordsStartingWithA =
-        testPipeline.apply("Words starting with A",
-            Create.of("apple", "ant", "arrow"));
-    PCollection<String> wordsStartingWithB =
-        testPipeline.apply("Words starting with B",
-            Create.of("ball", "book", "bow"));
-
-    PCollection<String> results = Task.applyTransform(wordsStartingWithA, wordsStartingWithB);
-
-    PAssert.that(results)
-        .containsInAnyOrder("apple", "ant", "arrow", "ball", "book", "bow");
-
-    testPipeline.run().waitUntilFinish();
-  }
+  //write test here!
 
 }
