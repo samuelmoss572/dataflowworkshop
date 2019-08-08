@@ -30,9 +30,6 @@ import org.junit.Test;
 
 public class TaskTest {
 
-  @Rule
-  public final transient TestPipeline testPipeline = TestPipeline.create();
-
   //Write test here!
 
 }
